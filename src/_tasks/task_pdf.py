@@ -3,7 +3,7 @@
 # @Time 2020-01-03 11:20
 #
 
-from pdf.PdfPageUtils import page_picker
+from pdf.PdfSplitter import page_picker
 
 if __name__ == '__main__':
     # target file path

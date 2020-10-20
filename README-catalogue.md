@@ -2,8 +2,8 @@
 
 1. PDF Page Spliter
 - description: Pick some pages from a pdf file to make a new pdf file as specified sequence.
-- task: [task_001.py](/src/_tasks/pdf.py)
-- library: [PdfPageUtiles.py#page_picker](/pdf/PdfPageUtils.py#L9)
+- task: [task_001.py](/src/_tasks/task_pdf.py)
+- library: [PdfPageUtiles.py#page_picker](/src/pdf/PdfSplitter.py#L10)
 - references:
 [pyPdf home](http://pybrary.net/pyPdf/),
 [github1](https://github.com/mstamy2/PyPDF2),
