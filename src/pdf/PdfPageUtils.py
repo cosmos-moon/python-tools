@@ -3,13 +3,14 @@
 # @Time 2020-01-03 10:16
 #
 
-from PyPDF2 import PdfFileReader, PdfFileWriter
+import PyPDF2
 import os
 
-#page_picker
-def page_picker(target_file: str, page_indexs: list, new_path: str = None, new_filename: str = None):
+
+# page_picker
+def page_picker(target_file: str, page_index_list: list, new_path: str = None, new_filename: str = None):
     if not os.path.isfile(target_file):
-        raise Exception("targe file path must be a file: " + target_file)
+        raise Exception("target file path must be a file: " + target_file)
     if new_path is None:
         new_path = os.path.dirname(target_file)
 
@@ -29,11 +30,11 @@ def page_picker(target_file: str, page_indexs: list, new_path: str = None, new_f
     output_file = os.path.join(new_path, new_filename)
     print("output file", "=>", output_file)
 
-    with open(target_file, 'rb') as targe_pdf:
-        reader = PdfFileReader(targe_pdf)
+    with open(target_file, 'rb') as target_pdf:
+        reader = PyPDF2.PdfFileReader(target_pdf)
         page_total = reader.getNumPages()
-        writer = PdfFileWriter()
-        for i in page_indexs:
+        writer = PyPDF2.PdfFileWriter()
+        for i in page_index_list:
             if 0 <= i < page_total:
                 writer.addPage(reader.getPage(i - 1))
             else:
