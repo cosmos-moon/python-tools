@@ -1,1 +1,2 @@
+ExifRead==2.3.2
 PyPDF2==1.26.0
